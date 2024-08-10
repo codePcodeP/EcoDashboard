@@ -3,4 +3,3 @@ pinecone_client=3.2.2
 streamlit=1.34.0
 
 
-Successfully installed streamlit-1.34.0 A CHANGER REQUIREMENTS FILES!!!

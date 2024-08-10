@@ -1,10 +1,6 @@
 # BUILDING COUNTRY ECONOMY COMPARISON # 
 
-if ai_app == "Economic dashboard":
-    # Title
-    st.title("Interactive Dashboard with Streamlit and Plotly")
-
-    # Load the CSV file
+# Load the CSV file
     #@st.cache  # Use caching to load the CSV only once
     def load_data():
         path = "c1.csv"  # Adjust path accordingly

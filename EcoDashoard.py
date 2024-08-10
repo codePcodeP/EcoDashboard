@@ -15,14 +15,12 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, Frame
-
+from dotenv import load_dotenv
 
 # loading variables from .env file
 load_dotenv()
-
 # Set up API KEY FOR APPS, blog, chatbot, to change, Hide the API key in a file #
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))# loading variables from .env file
 
 # BUILDING COUNTRY ECONOMY COMPARISON # 
 # Load the CSV file

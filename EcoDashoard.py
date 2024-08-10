@@ -1,15 +1,14 @@
 import streamlit as st
 import os
-from openai import OpenAI
+import openai  # Corrected this import
 import numpy as np
 import pandas as pd
 import PyPDF2
 import random
-import pinecone
+import pinecone  # Removed redundant import
 import io
 import plotly.express as px
 
-from pinecone import Pinecone
 from PIL import Image
 from io import BytesIO
 from docx import Document
@@ -49,18 +48,14 @@ def create_graphs(df):
     fig10 = px.area(df, x='Year', y='Current account balance (Net, BoP, cur. US$)', title="Area Chart")
     return [fig0, fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8, fig9, fig10]
 
-# Update other parts of your code to remove references to the now non-existent unemployment rate graph.
-
-
-
 # Create graphs
 graphs = create_graphs(filtered_df)
 
 # Sidebar for graph selection
 graph_selection = st.sidebar.multiselect(
     "Select Graphs to Display",
-    ["Bar Chart", "Line Plot", "Inflation per Year", "Scatter Plot", "Histogram", "Real per Capita GDP Growth Rate (annual %)", "Exports of Goods and Services per Year", "Imports of Goods and Services per Year", "Pie Chart", "Violin Plot", "Area Chart"],
-    ["Bar Chart", "Line Plot", "Inflation per Year", "Scatter Plot", "Histogram", "Real per Capita GDP Growth Rate (annual %)", "Exports of Goods and Services per Year", "Imports of Goods and Services per Year", "Pie Chart",  "Violin Plot", "Area Chart"]
+    ["Bar Chart", "Line Plot", "Inflation per Year", "Scatter Plot", "Histogram", "Real per Capita GDP Growth Rate (annual %)", "Exports of Goods and Services per Year", "Imports of Goods and Services per Year", "Violin Plot", "Area Chart"],
+    ["Bar Chart", "Line Plot", "Inflation per Year", "Scatter Plot", "Histogram", "Real per Capita GDP Growth Rate (annual %)", "Exports of Goods and Services per Year", "Imports of Goods and Services per Year", "Violin Plot", "Area Chart"]
 )
 
 # Map selected graphs to corresponding Plotly figures
@@ -68,20 +63,13 @@ graph_map = {
     "Bar Chart": graphs[0],
     "Line Plot": graphs[1],
     "Inflation per Year": graphs[2],
-    "Scatter Plot": graphs[5],
-    "Histogram": graphs[6],
-    "Real per Capita GDP Growth Rate (annual %)": graphs[7],
-    "Exports of Goods and Services per Year": graphs[3],
-    "Imports of Goods and Services per Year": graphs[4],
-    "Pie Chart": graphs[8],
-    "Violin Plot": graphs[9],
-    "Area Chart": graphs[10],
-    #"GDP per Capita per Year": graphs[11],
-    #"Unemployment Rate per Year": graphs[12],
-    #"Government Debt to GDP Ratio per Year": graphs[12],
-    #"Total Population per Year": graphs[13],
-    #"Area Chart": graphs[14],
-    #"FDI Inflow per Year": graphs[15]
+    "Scatter Plot": graphs[3],
+    "Histogram": graphs[4],
+    "Real per Capita GDP Growth Rate (annual %)": graphs[5],
+    "Exports of Goods and Services per Year": graphs[6],
+    "Imports of Goods and Services per Year": graphs[7],
+    "Violin Plot": graphs[8],
+    "Area Chart": graphs[9],
 }
 
 # Display selected graphs in a single column and centered
@@ -89,98 +77,3 @@ for graph_name in graph_selection:
     st.plotly_chart(graph_map[graph_name], use_container_width=True)
 
 # END OF BUILDING COUNTRY ECONOMY COMPARISON #
-
-
-# Custom CSS for styling
-st.markdown(
-    """
-    <style>
-        /* Ensure the entire app background is consistently applied */
-        .stApp {
-            background-color: #F4F4FF !important;
-            padding: 00px;
-        }
-
-        /* Adjust the background color of the main content area */
-        .block-container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            margin-top: 80px;
-            margin-bottom: 20px;
-        }
-
-        /* Styling for the generated text box */
-        .generated-box {
-            background-color: #F4F4FF;
-            padding: 20px;
-            border: 1px solid #0000001A;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            white-space: pre-wrap; /* Preserve line breaks */
-        }
-
-        /* Style the header and subheader */
-        h1, h2, h3 {
-            color: #000;
-            margin-bottom: 20px;
-        }
-
-        /* Style the buttons */
-        button {
-            background: #0025B8 !important;
-            color: #fff !important;
-            border: none !important;
-            display: flex !important;
-            width: fit-content !important;
-            margin: auto !important;
-        }
-
-        button p {
-            color: #fff !important;
-        }
-
-        /* General paragraph styling */
-        p {  
-            color: #000;
-            font-size: 16px !important;
-        }
-
-        /* Style the links in the list */
-        ul li a {
-            padding: 10px 12px;
-        }
-
-        /* Centering specific elements */
-        #blog-generator {
-            text-align: center;
-        }
-
-        .stMarkdown {
-            text-align: justify;
-        }
-
-        .eczjsme18 {
-            background: #fff;
-        }
-
-        .st-ae {
-            background: #F4F4FF;
-            border: none;
-        }
-
-        .st-ae:focus {
-            outline: none !important;
-        }
-
-        .st-emotion-cache-5k5r22:active {
-            color: red !important;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-

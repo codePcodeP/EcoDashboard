@@ -1,3 +1,23 @@
+import streamlit as st
+import os
+from openai import OpenAI
+import numpy as np
+import pandas as pd
+import PyPDF2
+import random
+import pinecone
+import io
+import plotly.express as px
+
+from pinecone import Pinecone
+from PIL import Image
+from io import BytesIO
+from docx import Document
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Paragraph, Frame
+
 # BUILDING COUNTRY ECONOMY COMPARISON # 
 
 # Load the CSV file

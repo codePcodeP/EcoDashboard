@@ -17,10 +17,17 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, Frame
 
-# BUILDING COUNTRY ECONOMY COMPARISON # 
 
+# loading variables from .env file
+load_dotenv()
+
+# Set up API KEY FOR APPS, blog, chatbot, to change, Hide the API key in a file #
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+
+
+# BUILDING COUNTRY ECONOMY COMPARISON # 
 # Load the CSV file
-#@st.cache  # Use caching to load the CSV only once
+@st.cache  # Use caching to load the CSV only once
 def load_data():
     path = "c1.csv"  # Adjust path accordingly
     return pd.read_csv(path)

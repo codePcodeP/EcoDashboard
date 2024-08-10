@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-import openai  # Corrected this import
+from openai import OpenAI 
 import numpy as np
 import pandas as pd
 import PyPDF2

@@ -70,3 +70,97 @@ for graph_name in graph_selection:
 
 # END OF BUILDING COUNTRY ECONOMY COMPARISON #
 
+
+# Custom CSS for styling
+st.markdown(
+    """
+    <style>
+        /* Ensure the entire app background is consistently applied */
+        .stApp {
+            background-color: #F4F4FF !important;
+            padding: 00px;
+        }
+
+        /* Adjust the background color of the main content area */
+        .block-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 80px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the generated text box */
+        .generated-box {
+            background-color: #F4F4FF;
+            padding: 20px;
+            border: 1px solid #0000001A;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            white-space: pre-wrap; /* Preserve line breaks */
+        }
+
+        /* Style the header and subheader */
+        h1, h2, h3 {
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        /* Style the buttons */
+        button {
+            background: #0025B8 !important;
+            color: #fff !important;
+            border: none !important;
+            display: flex !important;
+            width: fit-content !important;
+            margin: auto !important;
+        }
+
+        button p {
+            color: #fff !important;
+        }
+
+        /* General paragraph styling */
+        p {  
+            color: #000;
+            font-size: 16px !important;
+        }
+
+        /* Style the links in the list */
+        ul li a {
+            padding: 10px 12px;
+        }
+
+        /* Centering specific elements */
+        #blog-generator {
+            text-align: center;
+        }
+
+        .stMarkdown {
+            text-align: justify;
+        }
+
+        .eczjsme18 {
+            background: #fff;
+        }
+
+        .st-ae {
+            background: #F4F4FF;
+            border: none;
+        }
+
+        .st-ae:focus {
+            outline: none !important;
+        }
+
+        .st-emotion-cache-5k5r22:active {
+            color: red !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+

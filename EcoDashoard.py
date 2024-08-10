@@ -5,7 +5,6 @@ import numpy as np
 import pandas as pd
 import PyPDF2
 import random
-import pinecone  # Removed redundant import
 import io
 import plotly.express as px
 

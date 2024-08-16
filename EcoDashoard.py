@@ -16,6 +16,10 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, Frame
 from dotenv import load_dotenv
+from streamlit_autorefresh import st_autorefresh
+
+# This will refresh the app every 14 minutes
+st_autorefresh(interval=14 * 60 * 1000, key="refresh")
 
 # loading variables from .env file
 load_dotenv()

@@ -110,7 +110,7 @@ st.markdown("""
         
         /* Apply background color to the sidebar menu */
         .css-1d391kg {
-            background-color: #F4F4FF !important;
+            background-color: #F466FF !important;
         }
         p{  
             color: #000;

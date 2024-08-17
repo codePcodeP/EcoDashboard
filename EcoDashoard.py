@@ -85,3 +85,85 @@ for graph_name in graph_selection:
     st.plotly_chart(graph_map[graph_name], use_container_width=True)
 
 # END OF BUILDING COUNTRY ECONOMY COMPARISON #
+
+st.markdown("""
+    <style>
+        button{
+            background: #0025B8 !important;
+            color: #fff !important;
+            border: none !important;
+            display: flex !important;
+            width: fit-content !important;
+            margin: auto !important;
+        }
+        button p{
+            color: #fff !important;
+        }
+        p{  
+            color: #000;
+            font-size: 16px !important;
+        }
+        ul li a{
+            padding: 10px 12px;
+        }
+        #blog-generator{
+            text-align: center;
+        }
+        .stMarkdown{
+            text-align: justify;
+        }
+        
+        .stApp {
+            background-color: #F4F4FF;
+            padding: 00px;
+        }
+            
+        .eczjsme18{
+            background: #fff;
+        } 
+     
+        .block-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;  /* Changed to 20px */
+            margin-bottom: 10px;
+            width: 95%;  /* Changed to 95% of the screen width */
+            max-width: 95%; /* Ensures the block container doesn’t exceed 95% of the screen width */
+            margin-left: auto;  /* Center-aligns the container */
+            margin-right: auto; /* Center-aligns the container */
+        }
+        .css-1y6r8k8 {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .st-ae {
+            background: #F4F4FF;
+            border: none;
+        }
+        .st-ae:focus{
+            outline: none !important;
+        }
+        .st-emotion-cache-5k5r22:active{
+            color: red !important;
+        }
+
+        /* Apply background color to the file uploader widget */
+        .stFileUploader {
+            background-color: #F4F4FF !important;
+            border-radius: 10px !important;
+            padding: 10px !important;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0) !important;
+        }
+
+        /* Ensure the input inside the file uploader matches the background */
+        .stFileUploader input[type="file"] {
+            background-color: #F4F4FF !important;
+            color: #000 !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+

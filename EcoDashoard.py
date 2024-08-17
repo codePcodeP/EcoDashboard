@@ -96,6 +96,14 @@ st.markdown("""
             width: fit-content !important;
             margin: auto !important;
         }
+        button{
+            background: #0025B8 !important;
+            color: #fff !important;
+            border: none !important;
+            display: flex !important;
+            width: fit-content !important;
+            margin: auto !important;
+        }
         button p{
             color: #fff !important;
         }

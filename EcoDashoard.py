@@ -157,6 +157,11 @@ st.markdown("""
             padding: 10px !important;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0) !important;
         }
+        
+        /* Apply background color to the sidebar menu */
+        .css-1d391kg {
+            background-color: #F4F4FF !important;
+        }
 
         /* Ensure the input inside the file uploader matches the background */
         .stFileUploader input[type="file"] {

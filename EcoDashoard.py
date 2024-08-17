@@ -109,9 +109,16 @@ st.markdown("""
         }
         
         /* Apply background color to the sidebar menu */
-        .css-1d391kg {
-            background-color: #F466FF !important;
+        .css-164nlkn, .css-1d391kg, .css-1r9x10k, .css-1v0mbdj {  /* These class names are common for sidebar components */
+            background-color: #F4F4FF !important;
         }
+
+        /* Alternatively, targeting the entire sidebar */
+        .css-18e3th9 {
+            background-color: #F4F4FF !important;
+        }
+
+        
         p{  
             color: #000;
             font-size: 16px !important;

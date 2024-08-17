@@ -63,7 +63,7 @@ graphs = create_graphs(filtered_df)
 graph_selection = st.sidebar.multiselect(
     "Select Graphs to Display",
     ["Bar Chart", "Line Plot", "Inflation per Year", "Scatter Plot", "Histogram", "Real per Capita GDP Growth Rate (annual %)", "Exports of Goods and Services per Year", "Imports of Goods and Services per Year", "Violin Plot", "Area Chart"],
-    ["Bar Chart", "Line Plot", "Inflation per Year", "Scatter Plot", "Histogram", "Real per Capita GDP Growth Rate (annual %)", "Exports of Goods and Services per Year", "Imports of Goods and Services per Year", "Violin Plot", "Area Chart"]
+    []  # By default, no graphs are selected
 )
 
 # Map selected graphs to corresponding Plotly figures
@@ -81,9 +81,11 @@ graph_map = {
 }
 
 # Display selected graphs in a single column and centered
-for graph_name in graph_selection:
-    st.plotly_chart(graph_map[graph_name], use_container_width=True)
+if graph_selection:
+    for graph_name in graph_selection:
+        st.plotly_chart(graph_map[graph_name], use_container_width=True)
 
+# END OF BUILDING COUNTRY ECONOMY COMPARISON #
 # END OF BUILDING COUNTRY ECONOMY COMPARISON #
 
 st.markdown("""
